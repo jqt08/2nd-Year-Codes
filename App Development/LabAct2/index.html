@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticketing System</title>
+    <style>
+    </style>
+</head>
+<body>
+    <h2>Ticketing System</h2>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        Enter a start code (1-50):
+        <input type="number" name="start_code" min="1" max="50" required>
+        <button type="submit">Process Tickets</button>
+    </form>
+
+    <hr>
+
+    <h3>Processed Codes</h3>
+    <div>
+        <?php
+        if (!empty($processedCodes)) {
+            echo "<h4>Regular Events:</h4>";
+            foreach ($regularEvents as $code) {
+                echo $code . "<br>";
+            }
+
+            echo "<h4>VIP Events:</h4>";
+            foreach ($vipEvents as $code) {
+                echo $code . "<br>";
+            }
+
+            echo "<h4>VVIP Events:</h4>";
+            foreach ($vvipEvents as $code) {
+                echo $code . "<br>";
+            }
+        }
+        ?>
+    </div>
+</body>
+</html>
