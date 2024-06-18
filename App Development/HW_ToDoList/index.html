@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zombie Themed Todo List</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-image: url('https://c4.wallpaperflare.com/wallpaper/443/823/638/dark-hand-cross-dirt-wallpaper-preview.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    nav a {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+    }
+    .nav-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+    }
+  </style>
+</head>
+<body class="bg-zinc-900 text-white min-h-screen flex flex-col items-center justify-center">
+
+  <header class="flex justify-between items-center p-6">
+    <div class="flex items-center space-x-2">
+      <img src="https://pzwiki.net/w/images/3/3e/Moodle_Icon_Zombie.png" alt="Logo" class="w-10 h-10">
+      <h1 class="text-2xl font-bold">Zombie To-Do List</h1>
+    </div>
+    <nav class="hidden md:flex space-x-6">
+
+        <div class="nav-item flex items-center">
+          <img src="https://pzwiki.net/w/images/e/e4/Moodle_Icon_Panic.png" alt="Location" class="w-10 h-10 ml-3">
+          <a href="#" class="hover:text-zinc-300">Features</a>
+        </div>
+        <div class="nav-item flex items-center">
+          <img src="https://pzwiki.net/w/images/f/fa/Moodle_Icon_Sick.png" alt="Events" class="w-10 h-10">
+          <a href="#" class="hover:text-zinc-300">Screenshots</a>
+        </div>
+        <div class="nav-item flex items-center">
+          <img src="https://pzwiki.net/w/images/2/2b/Moodle_Icon_Tired.png" alt="Guests" class="w-10 h-10">
+          <a href="#" class="hover:text-zinc-300">About</a>
+        </div>
+        <div class="nav-item flex items-center">
+          <img src="https://pzwiki.net/w/images/8/86/Moodle_Icon_Dead.png" alt="Contacts" class="w-10 h-10">
+          <a href="#" class="hover:text-zinc-300">Contacts</a>
+        </div>
+      </nav>   
+
+    <div class="relative">
+      <input type="text" placeholder="Search" class="rounded-full py-2 px-4 text-zinc-800">
+      <button class="absolute right-2 top-2 text-zinc-800">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 1114 0 7 7 0 01-14 0z"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="flex flex-col items-center text-center py-20 px-4">
+    <div class="flex items-center mb-8">
+      <img src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/108600/b8036444b2a8889663bc232c142ac888e8353415.ico" alt="Halloween Pumpkins" class="w-48 h-auto mr-8">
+      <div>
+        <h2 class="text-4xl font-bold mb-4">Stay Organized, Even During the Apocalypse</h2>
+        <p class="text-lg mb-6">Never lose track of your tasks, even in the midst of chaos.</p>
+        <p class="text-lg mb-6">Our Zombie To-Do List app keeps you organized and focused on what's important.</p>
+      </div>
+    </div>
+    <h3 class="text-xl font-bold text-orange-400 mb-4">Never Miss a DEADline</h3>
+    <a href="index.php" class="bg-red-500 hover:bg-red-600 text-white py-2 px-6 rounded-full">Make a List</a>
+  </main>
+</body>
+</html>
