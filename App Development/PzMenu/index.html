@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://pzwiki.net/w/images/3/3e/Moodle_Icon_Zombie.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Butcherman&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=Libre+Caslon+Display&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <style>
+    .todo-list-title {
+      font-family: 'Butcherman', sans-serif;
+      font-size: 50px; 
+      font-weight: bold; 
+    }
+    body {
+      font-family: 'Libre Caslon Display', sans-serif;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function showSection(sectionId) {
+      document.getElementById('main-menu').classList.add('hidden');
+      document.querySelectorAll('.content-section').forEach(section => {
+        section.classList.add('hidden');
+      });
+      document.getElementById(sectionId).classList.remove('hidden');
+    }
+
+    function goBack() {
+      document.querySelectorAll('.content-section').forEach(section => {
+        section.classList.add('hidden');
+      });
+      document.getElementById('main-menu').classList.remove('hidden');
+    }
+  </script>
+</head>
+<body class="bg-gray-900 text-white">
+  <div class="relative min-h-screen bg-cover bg-center" style="background-image: url('pzmenu.png');">
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    
+    <!-- Main Menu -->
+    <div id="main-menu" class="relative z-1 flex flex-col items-start p-8 space-y-4">
+      <div class="flex items-center mb-4">
+        <img src="pztitlewhite.png" alt="project zomboid" class="w-1/2 max-w-lg" />
+        <div class="ml-4 text-white text-lg">
+          <div>
+            <p class="todo-list-title">To-Do List</p> 
+          </div>
+          <div>
+            <p class="italic">Stay organized, even during the apocalypse!</p>
+          </div>
+        </div>        
+      </div>
+      <ul class="text-white text-lg space-y-2">
+        <li><a href="#" class="hover:underline" onclick="showSection('features')">FEATURES</a></li>
+        <li><a href="#" class="hover:underline" onclick="showSection('screenshots')">SCREENSHOTS</a></li>
+        <li><a href="#" class="hover:underline" onclick="showSection('why-us')">WHY USE</a></li>
+        <li><a href="#" class="hover:underline" onclick="showSection('about-me')">ABOUT ME</a></li>
+        <li>
+          <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
+            <a href="index.php">MAKE A LIST</a>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Shared Section Template -->
+    <div id="features" class="hidden content-section absolute inset-0 flex items-center justify-center">
+      <div class="flex h-screen bg-zinc-800/50 bg-opacity-90 border border-black text-white w-3/4">
+        <div class="w-1/4 bg-zinc-900/70 bg-opacity border border-black p-4">
+          <ul class="space-y-2">
+            <li class="hover:bg-zinc-700 p-2 rounded"><a href="#" onclick="showSection('features')">Features</a></li>
+            <li class="hover:bg-zinc-700 p-2 rounded"><a href="#" onclick="showSection('screenshots')">Screenshots</a></li>
+            <li class="hover:bg-zinc-700 p-2 rounded"><a href="#" onclick="showSection('why-us')">Why Use</a></li>
+            <li class="hover:bg-zinc-700 p-2 rounded"><a href="#" onclick="showSection('about-me')">About Me</a></li>
+          </ul>
+          <button class="mt-4 bg-zinc-700 hover:bg-zinc-600 p-2 rounded w-full" onclick="goBack()">Back</button>
+        </div>
+        <div class="w-3/4 p-4 overflow-y-auto">
+          <h1 class="text-3xl font-bold mb-4">FEATURES</h1>
+          <div class="space-y-4">
+            <div class="border-t border-zinc-700 py-4">
+              <h2 class="text-2xl mb-2">Adding a Task</h2>
+              <p>Makes adding a task easier and faster especially when you're in a rush to outrun the UNDEAD</p>
+            </div>
+            <div class="border-t border-zinc-700 py-4">
+              <h2 class="text-2xl mb-2">Easier to put Due Dates</h2>
+              <p>Features a calendar to easily put your DEADlines</p>
+            </div>
+            <div class="border-t border-zinc-700 py-4">
+              <h2 class="text-2xl mb-2">See your tasks quickly</h2>
+              <p>Entered tasks are displayed immediately ensuring your notes are SAFE and SECURE</p>
+            </div>
+            <div class="border-t border-zinc-700 py-4">
+                <h2 class="text-2xl mb-2">Quickly remove tasks</h2>
+                <p>Tasks are easily DELETED from this world once done.</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screenshots Section -->
+    <div id="screenshots" class="hidden content-section absolute inset-0 flex items-center justify-center">
+      <div class="flex h-screen bg-zinc-800/50 bg-opacity-90 border border-black text-white w-3/4">
+        <div class="w-1/4 bg-zinc-900/70 bg-opacity border border-black p-4">
+          <ul class="space-y-2">
+            <li class="hover:bg-zinc-700 p-2 rounded"><a href="#" onclick="showSection('features')">Features</a></li>
+            <li class="hover:bg-zinc-700 p-2 rounded"><a href="#" onclick="showSection('screenshots')">Screenshots</a></li>
+            <li class="hover:bg-zinc-700 p-2 rounded"><a href="#" onclick="showSection('why-us')">Why Use</a></li>
+            <li class="hover:bg-zinc-700 p-2 rounded"><a href="#" onclick="showSection('about-me')">About Me</a></li>
+          </ul>
+          <button class="mt-4 bg-zinc-700 hover:bg-zinc-600 p-2 rounded w-full" onclick="goBack()">Back</button>
+        </div>
+        <div class="w-3/4 p-4 overflow-y-auto">
+          <h1 class="text-3xl font-bold mb-4">SCREENSHOTS</h1>
+          <div class="space-y-4">
+            <img src="ss1.png" alt="Screenshot 1" class="rounded-lg">
+            <img src="ss2.png" alt="Screenshot 2" class="rounded-lg">
+            <img src="ss3.png" alt="Screenshot 1" class="rounded-lg">
+            <img src="ss4.png" alt="Screenshot 2" class="rounded-lg">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Us Section -->
+    <div id="why-us" class="hidden content-section absolute inset-0 flex items-center justify-center">
+      <div class="flex h-screen bg-zinc-800/50 bg-opacity-90 border border-black text-white w-3/4">
+        <div class="w-1/4 bg-zinc-900/70 bg-opacity border border-black p-4">
+          <ul class="space-y-2">
+            <li class="hover:bg-zinc-700 p-2 rounded"><a href="#" onclick="showSection('features')">Features</a></li>
+            <li class="hover:bg-zinc-700 p-2 rounded"><a href="#" onclick="showSection('screenshots')">Screenshots</a></li>
+            <li class="hover:bg-zinc-700 p-2 rounded"><a href="#" onclick="showSection('why-us')">Why Use</a></li>
+            <li class="hover:bg-zinc-700 p-2 rounded"><a href="#" onclick="showSection('about-me')">About Me</a></li>
+          </ul>
+          <button class="mt-4 bg-zinc-700 hover:bg-zinc-600 p-2 rounded w-full" onclick="goBack()">Back</button>
+        </div>
+        <div class="w-3/4 p-4 overflow-y-auto">
+          <h1 class="text-3xl font-bold mb-4">WHY USE</h1>
+          <p class="text-3xl">Stay Organized, Even During the Apocalypse
+          Never lose track of your tasks, even in the midst of chaos
+          Our Zombie To-Do List app keeps you organized and focused on what's important.
+          Never miss a DEADline</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Me Section -->
+    <div id="about-me" class="hidden content-section absolute inset-0 flex items-center justify-center">
+      <div class="flex h-screen bg-zinc-800/50 bg-opacity-90 border border-black text-white w-3/4">
+        <div class="w-1/4 bg-zinc-900/70 bg-opacity border border-black p-4">
+          <ul class="space-y-2">
+            <li class="hover:bg-zinc-700 p-2 rounded"><a href="#" onclick="showSection('features')">Features</a></li>
+            <li class="hover:bg-zinc-700 p-2 rounded"><a href="#" onclick="showSection('screenshots')">Screenshots</a></li>
+            <li class="hover:bg-zinc-700 p-2 rounded"><a href="#" onclick="showSection('why-us')">Why Use</a></li>
+            <li class="hover:bg-zinc-700 p-2 rounded"><a href="#" onclick="showSection('about-me')">About Me</a></li>
+          </ul>
+          <button class="mt-4 bg-zinc-700 hover:bg-zinc-600 p-2 rounded w-full" onclick="goBack()">Back</button>
+        </div>
+        <div class="w-3/4 p-4 overflow-y-auto">
+          <h1 class="text-3xl font-bold mb-4">ABOUT ME</h1>
+          <p class="text-3xl">I am Aaron Jacob G. Garcia a 2nd Year student of Computer Science Major in Data Science. This is my first class that tackles the front end aspect of programming. 
+            Which taught me HTML, CSS, PHP, JavaScript, and a review on SQL.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
